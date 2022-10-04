@@ -69,7 +69,7 @@
             <li class="nav-item pb-2">
               <a class="nav-link {{ (Request::is('permissions') ? 'active' : '') }}" href="{{ url('permissions') }}">
                   <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
-                      <i style="font-size: 1rem;" class="fas fa-lg fa-list-ul ps-2 pe-2 text-center text-dark {{ (Request::is('user-management') ? 'text-white' : 'text-dark') }} " aria-hidden="true"></i>
+                      <i style="font-size: 1rem;" class="fas fa-user-lock fa-list-ul ps-2 pe-2 text-center text-dark {{ (Request::is('permissions') ? 'text-white' : 'text-dark') }} " aria-hidden="true"></i>
                   </div>
                   <span class="nav-link-text ms-1">Permission</span>
               </a>
@@ -77,7 +77,7 @@
             <li class="nav-item pb-2">
               <a class="nav-link {{ (Request::is('roles') ? 'active' : '') }}" href="{{ url('roles') }}">
                   <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
-                      <i style="font-size: 1rem;" class="fas fa-lg fa-list-ul ps-2 pe-2 text-center text-dark {{ (Request::is('user-management') ? 'text-white' : 'text-dark') }} " aria-hidden="true"></i>
+                      <i style="font-size: 1rem;" class="fas fa-users fa-list-ul ps-2 pe-2 text-center text-dark {{ (Request::is('roles') ? 'text-white' : 'text-dark') }} " aria-hidden="true"></i>
                   </div>
                   <span class="nav-link-text ms-1">Role</span>
               </a>
@@ -86,7 +86,7 @@
             <li class="nav-item pb-2">
               <a class="nav-link {{ (Request::is('user') ? 'active' : '') }}" href="{{ url('user') }}">
                   <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
-                      <i style="font-size: 1rem;" class="fas fa-lg fa-list-ul ps-2 pe-2 text-center text-dark {{ (Request::is('user-management') ? 'text-white' : 'text-dark') }} " aria-hidden="true"></i>
+                      <i style="font-size: 1rem;" class="fas fa-user-tag fa-list-ul ps-2 pe-2 text-center text-dark {{ (Request::is('user') ? 'text-white' : 'text-dark') }} " aria-hidden="true"></i>
                   </div>
                   <span class="nav-link-text ms-1">User</span>
               </a>
@@ -181,9 +181,6 @@
           </div>
           <span class="nav-link-text ms-1">Sign Up</span>
         </a>
-      </li>
-      
-   
-  
+      </li>           
 </aside>
 
