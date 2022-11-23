@@ -11,15 +11,11 @@
                       <h5 class="modal-title" id="exampleModalLabel">Import Excel</h5>
                       </div>
                         <div class="modal-body">
-
                            <div class="form-row">
-
                               <div class="form-group col-md-12">                                                      
-                                <select class="btn btn-info" name="jalur" required="">                            
-                                                                                     
+                                <select class="btn btn-info" name="jalur" required="">                                                                                                                 
                                 </select>                                 
-                              </div>                                                       
-                                                                                                             
+                              </div>                                                                                                                                                                    
                               <div class="form-group col-md-12 {{ $errors->has('file') ? ' has-error' : '' }}">  
                           {{ csrf_field() }}
                           <label>Pilih file excel</label>
@@ -60,21 +56,21 @@
                                 <tr>
                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7" >Id</th>
                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Name</th>
-                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"><b>PERMISSIONS</b></th>
+                             
                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7" width="10%" colspan="3">Action</th>
                                 </tr>                                                                                                 
                             </thead>
                             <tbody>
-                            @foreach ($roles as $key => $role)
+                            @foreach ($roles as $role)
                                 <tr>
                                     <td>{{ $role->id }}</td>
                                     <td>{{ $role->name }}</td>
-                                    <td>{{ str_replace(array('[',']','"'),'', $role->permissions()->pluck('name')) }}</td>{{-- Retrieve array of permissions associated to a role and convert to string --}}
-                                    <td><a href="{{ route('roles.show', $role->id) }}" ><i class="fas fa-eye text-secondary"></a></td>                                    
+                                    
+                                    <td><a href="{{ route('roles.show', $role->id) }}" ><i class="fas fa-eye text-secondary"></a></td>                                                                        
                                     <td><a href="{{ route('roles.edit', $role->id) }}" data-toggle="modal" data-target="#edit{{$role->id}}" ><i class="fas fa-user-edit text-secondary"></i></a></td>
                                     <td><a href="{{ route('roles.destroy', $role->id) }}" ><i class="cursor-pointer fas fa-trash text-secondary"></i></a></td>
                                 </tr>
-                            @endforeach                                                    
+                            @endforeach                                                     
                             </tbody>
                         </table>
                     </div>

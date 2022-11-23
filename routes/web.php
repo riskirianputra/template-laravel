@@ -10,6 +10,10 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\RolesController;
 use App\Http\Controllers\PermissionsController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\VisitorController;
+use App\Http\Controllers\GalleryController;
+use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\AboutController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Password;
 use Illuminate\Support\Facades\Route;
@@ -29,10 +33,14 @@ use Spatie\Permission\Models\Role;
 
 
 Route::group(['middleware' => 'auth'], function () {
-
-    Route::get('/', [HomeController::class, 'home']);
 	
-	
+		Route::prefix('gallery')->group(function () {
+            Route::get('/', [GalleryController::class, 'index'])->name('gallery.index');
+            Route::post('/store', [GalleryController::class, 'store'])->name('gallery.store');
+            Route::get('/delete/{id}', [GalleryController::class, 'destroy'])->name('gallery.delete');
+        });
+	Route::get('/', [VisitorController::class, 'index']);
+	Route::view('/login', 'visitor-page.login');
 
 	Route::get('dashboard', function () {
 		return view('dashboard');
@@ -95,16 +103,23 @@ Route::group(['middleware' => 'guest'], function () {
 	
 });
 
-Route::get('/login', function () {
-    return view('session/login-session');
-})->name('login');
+Route::get('/landing', function () {
+    return view('visitor-page.landing-page');
+})->name('landing');
 
     Route::resource('user', UserController::class);
 	Route::resource('posts', PostController::class);	
 	
 	Route::resource('roles', RolesController::class) ;
     Route::resource('permissions', PermissionsController::class);
+
+	Route::resource('galery', GalleryController::class);
+	Route::resource('project', ProjectController::class);
+	Route::resource('about', AboutController::class);
+	
 	
 	Route::put('post/{id}/publish', [PostController::class, 'publish'])->name('post.publish');
 	Route::put('post/{id}/unpublish', [PostController::class, 'unpublish'])->name('post.unpublish');
+	
+
 	

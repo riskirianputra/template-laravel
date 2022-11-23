@@ -58,6 +58,21 @@
                             </div>
                         </div>
                     </div>
+
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="form-group">
+                                <label for="user-password" class="form-control-label">{{ __('password') }}</label>
+                                <div class="@error('password')border border-danger rounded-3 @enderror">
+                                    <input value="{{ old('password') }}" type="password" class="form-control" name="password" placeholder="password" required>                                   
+                                        @error('password')
+                                            <p class="text-danger text-xs mt-2">{{ $message }}</p>
+                                        @enderror
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     @foreach ($roles as $role)
                     <div class="row">
                         <div class="col-md-8">

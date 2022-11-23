@@ -6,12 +6,11 @@
                     © <script>
                         document.write(new Date().getFullYear())
                     </script>, made with <i class="fa fa-heart"></i> by
-                    <a href="" class="font-weight-bold" target="_blank">Riski Rian Putra</a> 
+                    <a href="" class="font-weight-bold" target="_blank">@riskirian__</a> 
                 </div>
             </div>
             <div class="col-lg-6">
-                <ul class="nav nav-footer justify-content-center justify-content-lg-end">
-                   
+                <ul class="nav nav-footer justify-content-center justify-content-lg-end">                   
                 </ul>
             </div>
         </div>

@@ -28,6 +28,7 @@ class RolesController extends Controller
     public function create()
     {
         $permissions = Permission::get();
+       
         return view('roles.create', compact('permissions'));
     }
 
@@ -38,8 +39,20 @@ class RolesController extends Controller
             
         ]);
 
-        $role = Role::create(['name' => $request->get('name')]);
-        $role->syncPermissions($request->get('permission'));
+        $name = $request['name'];
+        $role = new Role();
+        $role->name = $name;
+
+        $permissions = $request['permissions'];
+        
+        $role->save();
+        //Looping thru selected permissions
+        foreach ($permissions as $permission) {
+            $p = Permission::where('id', '=', $permission)->firstOrFail(); 
+         //Fetch the newly created role and assign permission
+            $role = Role::where('name', '=', $name)->first(); 
+            $role->givePermissionTo($p);
+        }        
 
         return redirect()->route('roles.index')
                         ->with('success','Role created successfully');

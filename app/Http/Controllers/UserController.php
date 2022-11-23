@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Hash;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Spatie\Permission\Models\Role;
@@ -26,9 +27,26 @@ class UserController extends Controller
 
     public function store(User $user, StoreUserRequest $request) 
     {        
-        $user->create(array_merge($request->validated(), [
-            'password' => 'test' 
-        ]));
+            $this->validate($request, [
+            'name'=>'required|max:120',
+            'email'=>'required|email|unique:users',
+        
+        ]);
+        $user = new User();
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->password = Hash::make($request->password);
+        $user->save();
+
+        $roles = $request['roles']; //Retrieving the roles field
+         //Checking if a role was selected
+        if (isset($roles)) {
+
+            foreach ($roles as $role) {
+            $role_r = Role::where('id', '=', $role)->firstOrFail();            
+            $user->assignRole($role_r); //Assigning role to user
+            }
+        }        
         return redirect()->route('user.index')
             ->withSuccess(__('User created successfully.'));
     }

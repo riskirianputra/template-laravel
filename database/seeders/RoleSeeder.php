@@ -28,7 +28,7 @@ class RoleSeeder extends Seeder
 
         	[
         		'id' => 2,
-        		'name' => 'Mahasiswa',     
+        		'name' => 'FO',     
         		'guard_name' =>'web',           		        		
         		'created_at'      => \Carbon\Carbon::now(),
             	'updated_at'      => \Carbon\Carbon::now()
@@ -36,7 +36,7 @@ class RoleSeeder extends Seeder
                  
             [
         		'id' => 3,
-        		'name' => 'Karyawan',     
+        		'name' => 'BPO',     
         		'guard_name' =>'web',           		        		
         		'created_at'      => \Carbon\Carbon::now(),
             	'updated_at'      => \Carbon\Carbon::now()

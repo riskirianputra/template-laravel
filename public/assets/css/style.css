@@ -1,0 +1,399 @@
+
+:root {
+    --primary: #3D3732;
+    --gold : #F1E9D6;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary)!important;
+}
+
+a :hover {
+    text-decoration: none;
+}
+
+html, body {
+    color: var(--primary);
+    font-family: 'Merienda', cursive;
+}
+
+ul {
+    list-style: none;
+    padding: 0px;
+}
+
+@media only screen and (max-width: 600px) {
+    .phone-hide {
+        display: none;
+    }
+}
+
+.center-verhor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-section {
+    text-align: center;
+}
+
+/* Bootstrap Adjustment start */
+
+    .card {
+        margin-bottom: 24px;
+        border-radius: 20px;
+        border: none;
+        background-color: var(--primary);
+        color: white;
+    }
+
+    .card .bag {
+        /* background-color: red; */
+        padding: 10px;
+        text-align: center;
+    }
+
+    .card img {
+        width: 100%;
+    }
+
+    .btn-primary-ss {
+        background-color: var(--gold);
+        color: var(--primary);
+        border-color: transparent;
+        font-weight: bolder;
+    }
+
+    .btn-secondary-ss {
+        background-color: var(--primary);
+        color: var(--gold)!important;
+        border-color: transparent;
+        font-weight: bolder;
+    }
+    .btn-secondary-ss:hover {
+        background-color: var(--primary);
+        color: var(--gold)!important;
+        border-color: transparent;
+        font-weight: bolder;
+    }
+
+
+/* Bootstrap Adjustment end */
+
+#jumbo , #promo , #about , #gallery , #menu, #login {
+    padding: 150px 0px;
+}
+
+.header-section {
+    margin-bottom: 50px;
+}
+
+
+/* Navbar start */
+
+    .navbar-nav {
+        text-align: center;
+    }
+
+    #navbar .navbar-nav li {
+        margin: 10px;
+    }
+
+/* Navbar end */
+
+/* Jumbo start */
+
+    /* #jumbo {
+        margin-top: 200px;
+        margin-bottom: 100px;
+    }
+
+    @media only screen and (max-width: 600px) {
+        #jumbo {
+            margin-top: 260px;
+            margin-bottom: 100px;
+        }
+    } */
+
+    #jumbo img {
+        width: 100%;
+    }
+
+    #jumbo .bag {
+        padding: 50px 0px;
+    }
+
+/* Jumbo end */
+
+/* Promo start */
+
+    #promo img {
+        /* width: 100%; */
+    }
+
+/* Promo end */
+
+/* About start */
+
+    #about img {
+        margin-bottom: 30px;
+    }
+
+    #about h5 {
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+/* About end */
+
+/* Menu start */
+
+    #menu .bag {
+        padding: 20px;
+    }
+
+    #menu h4, #menu h5, #menu button {
+        font-size: smaller;
+    }
+
+    #menu button {
+        margin-top: 10px;
+        color: var(--primary);
+        font-weight: bolder;
+    }
+
+    #menu button i {
+        margin-right: 10px;
+    }
+
+    #menu ul {
+        list-style-type: none;
+        margin-bottom: 30px;
+    }
+
+    #menu ul li {
+        margin: 0px 20px;
+    }
+
+/* Menu end */
+
+/* Gallery start */
+
+    #gallery .card {
+        background-color: transparent;
+    }
+
+    #gallery img {
+        width: 100%;
+        border-radius: 0px 10px 0px 10px;
+    }
+
+    #gallery.row > .column {
+        padding: 0 8px;
+    }
+    
+    #gallery .row:after {
+    content: "";
+    display: table;
+    clear: both;
+    }
+    
+    #gallery .column {
+        float: left;
+        width: 25%;
+    }
+
+    /* The Modal (background) */
+    #gallery .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        padding-top: 100px;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: black;
+    }
+
+    /* Modal Content */
+    #gallery .modal-content {
+        position: relative;
+        background-color: #fefefe;
+        margin: auto;
+        padding: 0;
+        width: 90%;
+        max-width: 1200px;
+    }
+
+    /* The Close Button */
+    #gallery .close {
+        color: white;
+        position: absolute;
+        top: 10px;
+        right: 25px;
+        font-size: 35px;
+        font-weight: bold;
+    }
+
+    #gallery .close:hover,
+    #gallery .close:focus {
+        color: #999;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    #gallery .mySlides {
+        display: none;
+    }
+
+    #gallery .cursor {
+        cursor: pointer;
+    }
+
+    /* Next & previous buttons */
+    #gallery .prev,
+    #gallery .next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: auto;
+        padding: 16px;
+        margin-top: -50px;
+        color: white;
+        font-weight: bold;
+        font-size: 20px;
+        transition: 0.6s ease;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+        -webkit-user-select: none;
+    }
+
+    /* Position the "next button" to the right */
+    #gallery .next {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+    }
+
+    /* On hover, add a black background color with a little bit see-through */
+    #gallery .prev:hover,
+    #gallery .next:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    /* Number text (1/3 etc) */
+    #gallery .numbertext {
+        color: #f2f2f2;
+        font-size: 12px;
+        padding: 8px 12px;
+        position: absolute;
+        top: 0;
+    }
+
+    #gallery img {
+        margin-bottom: -4px;
+    }
+
+    #gallery .caption-container {
+        text-align: center;
+        background-color: black;
+        padding: 2px 16px;
+        color: white;
+    }
+
+    #gallery .demo {
+        opacity: 0.6;
+    }
+
+    #gallery .active,
+    #gallery .demo:hover {
+        opacity: 1;
+    }
+
+    #gallery img.hover-shadow {
+        transition: 0.3s;
+    }
+
+    #gallery .hover-shadow:hover {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+/* Gallery end */
+
+/* Footer start */
+
+    #footer {
+        background-color: var(--primary);
+        color: white;
+        font-size: smaller;
+        padding: 50px 0px;
+    }
+
+    #footer a {
+        color: white!important;
+    }
+
+    #footer li {
+        margin-bottom: 5px;
+    }
+
+    #footer .section-title {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+
+/* Footer end */
+
+/* Copyright start */
+
+    #copyright {
+        text-align: center;
+        color: var(--primary);
+        padding: 10px 0px;
+        font-weight: bolder;
+    }
+
+/* Copyright end */
+
+/* Admin Gallery start*/
+
+    #galleryAdmin img {
+        width: 100%;
+    }
+
+/* Admin Gallery end */
+
+
+/* Modal Add To Cart start */
+
+    .modalAddToCart .modal-body {
+        padding: 20px;
+    }
+
+    .modalAddToCart .modal-body > div {
+        margin: 20px 0px;
+    }
+
+/* Modal Add To Cart end */
+
+/* Modal Contact start */
+
+    .modal-contact .bag .row {
+        flex-direction: column;
+    }
+
+    .modal-contact .bag .row > div {
+        margin-bottom: 30px;
+    }
+
+    .modal-contact .bag .row i {
+        font-size: 50px;
+        font-weight: bolder;
+        margin-bottom: 10px;
+    }
+
+/* Modal Contact end */
+

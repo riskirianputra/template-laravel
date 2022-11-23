@@ -32,12 +32,10 @@
                             <tbody>
                             @foreach ($permissions as $permission)
                                 <tr class="text-center">
-                                    <td>{{ $permission->name }}</td> 
-                                   
+                                    <td>{{ $permission->name }}</td>                                    
                                     <td><a href="{{ route('permissions.show', $permission->id) }}" ><i class="fas fa-eye text-secondary"></a></td>
                                     <td><a href="{{ route('permissions.edit', $permission->id) }}" ><i class="fas fa-user-edit text-secondary"></i></a></td>
-                                    <td><a href="{{ route('permissions.destroy', $permission->id) }}" ><i class="cursor-pointer fas fa-trash text-secondary"></i></a></td>
-                                 
+                                    <td><a href="{{ route('permissions.destroy', $permission->id) }}" ><i class="cursor-pointer fas fa-trash text-secondary"></i></a></td>                        
                                 </tr>
                                 @endforeach                                                                        
                             </tbody>

@@ -1,7 +1,6 @@
 @extends('layouts.user_type.auth')
 
 @section('content')
-
 <div>
     <div class="container-fluid">
         <div class="page-header min-height-300 border-radius-xl mt-4" style="background-image: url('../assets/img/curved-images/curved0.jpg'); background-position-y: 50%;">
@@ -178,7 +177,6 @@
                         <button type="submit" class="btn bg-gradient-dark btn-md mt-4 mb-4">{{ 'Save Changes' }}</button>
                     </div>
                 </form>
-
             </div>
         </div>
     </div>

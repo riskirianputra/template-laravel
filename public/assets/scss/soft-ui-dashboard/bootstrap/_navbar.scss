@@ -304,3 +304,18 @@
     }
   }
 }
+
+.fixed-nav {
+  position: -webkit-sticky;
+  position: sticky;
+  top:0;
+  left:0;
+  
+  z-index:1030;
+  background-color: white;
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+  transition: all 0.5s;
+  margin: auto;
+}
+.element{display:none;}
+.fixed-nav .element{display:block;}

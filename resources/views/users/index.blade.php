@@ -28,7 +28,7 @@
                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">ID</th>
                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Name</th>
                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Email</th>                                        
-                                   
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Role</th>
                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7" width="10%" colspan="3">Action</th>   
                                 </tr>                                                                    
                             </thead>
@@ -37,7 +37,8 @@
                                 <tr>
                                     <td>{{ $user->id }}</td>
                                     <td>{{ $user->name }}</td>
-                                    <td>{{ $user->email }}</td>                                                                                         
+                                    <td>{{ $user->email }}</td>  
+                                    <td>{{  $user->roles()->pluck('name')->implode(' ') }}</td>{{-- Retrieve array of roles associated to a user and convert to string --}}                                                                                       
                                   
                                     <td><a href="{{ route('user.show', $user->id) }}" ><i class="fas fa-eye text-secondary"></a></td>
                                     <td><a href="{{ route('user.edit', $user->id) }}" ><i class="fas fa-user-edit text-secondary"></i></a></td>
